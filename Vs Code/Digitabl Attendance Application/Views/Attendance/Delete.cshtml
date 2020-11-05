@@ -1,0 +1,64 @@
+﻿@model Digitabl_Attendance_Application.Models.employee_attendance_tbl
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>employee_attendance_tbl</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeIn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeIn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeOut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeOut)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeId)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

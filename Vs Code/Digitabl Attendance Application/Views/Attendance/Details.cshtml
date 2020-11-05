@@ -1,0 +1,58 @@
+﻿@model Digitabl_Attendance_Application.Models.employee_attendance_tbl
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>employee_attendance_tbl</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeIn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeIn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeOut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeOut)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

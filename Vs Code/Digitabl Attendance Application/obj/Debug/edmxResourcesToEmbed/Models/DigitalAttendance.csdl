@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DigitalAttendanceSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="department_tbl">
+    <Key>
+      <PropertyRef Name="DepartmentId" />
+    </Key>
+    <Property Name="DepartmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="employee_attendance_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WorkDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="TimeIn" Type="DateTime" Precision="3" />
+    <Property Name="TimeOut" Type="DateTime" Precision="3" />
+    <Property Name="TotalHours" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+    <Property Name="FirstTimeIn" Type="DateTime" Precision="3" />
+    <Property Name="FirstTimeOut" Type="DateTime" Precision="3" />
+    <Property Name="SecondTimeIn" Type="DateTime" Precision="3" />
+    <Property Name="SecondTimeOut" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="employee_tbl">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="DepartmentId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="DigitalAttendanceSystemEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="department_tbl" EntityType="Self.department_tbl" />
+    <EntitySet Name="employee_attendance_tbl" EntityType="Self.employee_attendance_tbl" />
+    <EntitySet Name="employee_tbl" EntityType="Self.employee_tbl" />
+  </EntityContainer>
+</Schema>
